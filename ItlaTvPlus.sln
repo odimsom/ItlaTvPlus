@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FEB3B0CC-A7FC-47A1-8680-DBBF50A813EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7846AC4E-1722-44F5-8272-497A00745EBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persitence", "Persitence", "{64E9257B-68D5-4530-A1F1-0C4861180D7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8D09F9C9-8895-46F1-8C88-F9AB002C321F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItlaTvPlus.Web", "ItlaTvPlus.Web\ItlaTvPlus.Web.csproj", "{BA051617-50BB-41C5-A773-0F8615F6253B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItlaTvPlus.Persitence", "ItlaTvPlus.Persitence\ItlaTvPlus.Persitence.csproj", "{E36FF956-85EB-4C86-9862-BE51A4101862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItlaTvPlus.Domain", "ItlaTvPlus.Domain\ItlaTvPlus.Domain.csproj", "{DEFFDE89-1F2D-461E-A0E3-283CE402E18B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItlaTvPlus.Application", "ItlaTvPlus.Application\ItlaTvPlus.Application.csproj", "{2842607B-01DF-4244-8D03-FFA52CE3EC11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA051617-50BB-41C5-A773-0F8615F6253B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA051617-50BB-41C5-A773-0F8615F6253B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA051617-50BB-41C5-A773-0F8615F6253B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA051617-50BB-41C5-A773-0F8615F6253B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36FF956-85EB-4C86-9862-BE51A4101862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36FF956-85EB-4C86-9862-BE51A4101862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36FF956-85EB-4C86-9862-BE51A4101862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36FF956-85EB-4C86-9862-BE51A4101862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEFFDE89-1F2D-461E-A0E3-283CE402E18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEFFDE89-1F2D-461E-A0E3-283CE402E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEFFDE89-1F2D-461E-A0E3-283CE402E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEFFDE89-1F2D-461E-A0E3-283CE402E18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2842607B-01DF-4244-8D03-FFA52CE3EC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2842607B-01DF-4244-8D03-FFA52CE3EC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2842607B-01DF-4244-8D03-FFA52CE3EC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2842607B-01DF-4244-8D03-FFA52CE3EC11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7846AC4E-1722-44F5-8272-497A00745EBB} = {FEB3B0CC-A7FC-47A1-8680-DBBF50A813EE}
+		{BA051617-50BB-41C5-A773-0F8615F6253B} = {8D09F9C9-8895-46F1-8C88-F9AB002C321F}
+		{E36FF956-85EB-4C86-9862-BE51A4101862} = {64E9257B-68D5-4530-A1F1-0C4861180D7C}
+		{DEFFDE89-1F2D-461E-A0E3-283CE402E18B} = {7846AC4E-1722-44F5-8272-497A00745EBB}
+		{2842607B-01DF-4244-8D03-FFA52CE3EC11} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2FAA659-A929-44EA-8367-BDAF55FC42BA}
+	EndGlobalSection
+EndGlobal
