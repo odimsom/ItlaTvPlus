@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ItlaTvPlus.Application\ItlaTvPlus.Application.csproj" />
     <ProjectReference Include="..\ItlaTvPlus.Domain\ItlaTvPlus.Domain.csproj" />
   </ItemGroup>
 
