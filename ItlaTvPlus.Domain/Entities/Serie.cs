@@ -11,8 +11,8 @@ namespace ItlaTvPlus.Domain.Entities
 
         public int ProducerId { get; set; }
 
-        public ICollection<Gender>? Genders { get; set; }
-
         public Producer? Producer { get; set; }
+
+        public ICollection<SeriesGenders> SerieGenders { get; set; }
     }
 }

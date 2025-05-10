@@ -3,6 +3,7 @@ using ItlaTvPlus.Persitence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ItlaTvPlus.Persitence.Migrations
 {
     [DbContext(typeof(ItlaTvPlusContext))]
-    partial class ItlaTvPlusContextModelSnapshot : ModelSnapshot
+    [Migration("20250510043502_newTableIntermediedBetweenSerieGender")]
+    partial class newTableIntermediedBetweenSerieGender
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

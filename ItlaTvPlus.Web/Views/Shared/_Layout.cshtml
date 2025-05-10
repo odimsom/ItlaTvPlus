@@ -3,42 +3,205 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ItlaTvPlus.Web</title>
+    <title>@ViewData["Title"] - ItlaTv+</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ItlaTvPlus.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+    <script>
+        tsParticles.load("tsparticles", {
+            fullScreen: {
+                enable: true,
+                zIndex: -1
+            },
+            background: {
+                color: "#27272a"
+            },
+            particles: {
+                number: {
+                    value: 60,
+                    density: {
+                        enable: true,
+                        area: 800
+                    }
+                },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: {
+                    value: 0.3
+                },
+                size: {
+                    value: 2,
+                    random: true
+                },
+                move: {
+                    enable: true,
+                    speed: 0.8,
+                    direction: "none",
+                    outModes: {
+                        default: "bounce"
+                    }
+                },
+                links: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.1,
+                    width: 1
+                }
+            }
+        });
+    </script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        main, header, footer {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg-zinc-800 {
+            background-color: #27272a !important;
+        }
+
+        .bg-zinc-800-translucent {
+            background-color: rgba(39, 39, 42, 0.85);
+        }
+
+
+        footer {
+            border-top: 1px solid #3f3f46;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+            .navbar-dark .navbar-nav .nav-link:hover {
+                color: rgba(255, 255, 255, 1);
+                background-color: #3f3f46;
+                border-radius: 0.25rem;
+            }
+
+        .form-control.bg-zinc-700 {
+            background-color: #3f3f46 !important;
+            border-color: #52525b !important;
+            color: #f4f4f5 !important;
+        }
+
+            .form-control.bg-zinc-700::placeholder {
+                color: #a1a1aa !important;
+            }
+
+            .form-control.bg-zinc-700:focus {
+                box-shadow: 0 0 0 0.25rem rgba(82, 82, 91, 0.25);
+            }
+
+        .search-icon {
+            color: #a1a1aa;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .search-input {
+            padding-left: 35px !important;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ItlaTvPlus.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+    <div id="tsparticles"></div>
+    <header  class="bg-zinc-900 text-white shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-zinc-800">
+            <div class="container">
+                <!-- Brand -->
+                <a class="navbar-brand fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-tv"></i>
+                    Itla Tv+
+                </a>
+
+                <!-- Toggle Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <!-- Navbar Content -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Search Bar (visible on desktop) -->
+                    <div class="d-none d-lg-block position-relative mx-auto" style="width: 40%;">
+                        <i class="bi bi-search search-icon"></i>
+                        <input class="form-control bg-zinc-700 search-input" type="search" placeholder="Search..." aria-label="Search">
+                    </div>
+
+                    <!-- Navigation Links with Icons -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link px-3 py-2 d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-door"></i>
+                                <span class="align-middle">Home</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link px-3 py-2 d-flex align-items-center" asp-area="" asp-controller="Serie" asp-action="Index">
+                                <i class="bi bi-film me-2"></i>
+                                <span>Series</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 d-flex align-items-center" asp-area="" asp-controller="Gender" asp-action="Index">
+                                <i class="bi bi-tags me-2"></i>
+                                <span>Genders</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 d-flex align-items-center" asp-area="" asp-controller="Producer" asp-action="Index">
+                                <i class="bi bi-person-video3 me-2"></i>
+                                <span>Producers</span>
+                            </a>
                         </li>
                     </ul>
+
+                    <!-- Search Bar (visible on mobile) -->
+                    <div class="d-lg-none position-relative mt-3">
+                        <i class="bi bi-search search-icon"></i>
+                        <input class="form-control bg-zinc-700 search-input" type="search" placeholder="Search..." aria-label="Search">
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <main class="bg-zinc-800-translucent min-h-screen text-white py-4">
+        <div class="w-full px-4">
             @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - ItlaTvPlus.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </main>
+    <footer class="bg-zinc-800 text-white py-4 mt-auto ">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap text-center text-lg-start">
+            <span>&copy; @DateTime.Now.Year - ItlaTvPlus.Web</span>
+            <span class="text-secondary">Powered by Mashle_Technologies</span>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

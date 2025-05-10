@@ -1,4 +1,9 @@
+using ItlaTvPlus.Application.InterfaceRepositories.Common;
+using ItlaTvPlus.Application.InterfaceRepositories.Interfaces;
+using ItlaTvPlus.Application.Services;
+using ItlaTvPlus.Persitence.Common;
 using ItlaTvPlus.Persitence.Context;
+using ItlaTvPlus.Persitence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +12,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ItlaTvPlusContext>(opt => opt.UseSqlServer(connectionString));
+
+#region Dependency inyection Repository
+builder.Services.AddScoped<ISerieRepository, SerieRepository>();
+builder.Services.AddScoped<IGenderRepository, GenderRepository>();
+builder.Services.AddScoped<IProducerRepsitory, ProducerRepository>();
+#endregion
+
+#region Depndency inyection Service
+builder.Services.AddScoped<SerieService>();
+builder.Services.AddScoped<GenderService>();
+builder.Services.AddScoped<ProducerService>();
+#endregion
 
 var app = builder.Build();
 
