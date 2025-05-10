@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ItlaTvPlus.Application\ItlaTvPlus.Application.csproj" />
+    <ProjectReference Include="..\ItlaTvPlus.Persitence\ItlaTvPlus.Persitence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@ using ItlaTvPlus.Persitence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ItlaTvPlus.Persitence.Migrations
 {
     [DbContext(typeof(ItlaTvPlusContext))]
-    partial class ItlaTvPlusContextModelSnapshot : ModelSnapshot
+    [Migration("20250510004410_newPropertyAuditoryRemove")]
+    partial class newPropertyAuditoryRemove
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,6 +23,21 @@ namespace ItlaTvPlus.Persitence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("GenderSerie", b =>
+                {
+                    b.Property<int>("GendersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SeriesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GendersId", "SeriesId");
+
+                    b.HasIndex("SeriesId");
+
+                    b.ToTable("SeriesGenders", (string)null);
+                });
 
             modelBuilder.Entity("ItlaTvPlus.Domain.Entities.Gender", b =>
                 {
@@ -112,19 +130,19 @@ namespace ItlaTvPlus.Persitence.Migrations
                     b.ToTable("Series", (string)null);
                 });
 
-            modelBuilder.Entity("ItlaTvPlus.Domain.Entities.SeriesGenders", b =>
+            modelBuilder.Entity("GenderSerie", b =>
                 {
-                    b.Property<int>("SerieId")
-                        .HasColumnType("int");
+                    b.HasOne("ItlaTvPlus.Domain.Entities.Gender", null)
+                        .WithMany()
+                        .HasForeignKey("GendersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("GenderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("SerieId", "GenderId");
-
-                    b.HasIndex("GenderId");
-
-                    b.ToTable("SeriesGenders", (string)null);
+                    b.HasOne("ItlaTvPlus.Domain.Entities.Serie", null)
+                        .WithMany()
+                        .HasForeignKey("SeriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ItlaTvPlus.Domain.Entities.Serie", b =>
@@ -138,38 +156,9 @@ namespace ItlaTvPlus.Persitence.Migrations
                     b.Navigation("Producer");
                 });
 
-            modelBuilder.Entity("ItlaTvPlus.Domain.Entities.SeriesGenders", b =>
-                {
-                    b.HasOne("ItlaTvPlus.Domain.Entities.Gender", "Gender")
-                        .WithMany("SerieGenders")
-                        .HasForeignKey("GenderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ItlaTvPlus.Domain.Entities.Serie", "Serie")
-                        .WithMany("SerieGenders")
-                        .HasForeignKey("SerieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Gender");
-
-                    b.Navigation("Serie");
-                });
-
-            modelBuilder.Entity("ItlaTvPlus.Domain.Entities.Gender", b =>
-                {
-                    b.Navigation("SerieGenders");
-                });
-
             modelBuilder.Entity("ItlaTvPlus.Domain.Entities.Producer", b =>
                 {
                     b.Navigation("Series");
-                });
-
-            modelBuilder.Entity("ItlaTvPlus.Domain.Entities.Serie", b =>
-                {
-                    b.Navigation("SerieGenders");
                 });
 #pragma warning restore 612, 618
         }

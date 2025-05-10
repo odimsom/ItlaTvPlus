@@ -2,7 +2,64 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-4">
+    <!-- Título general en el top -->
+    <div class="text-center mb-4">
+        <h2 class="text-white">Catálogo de Series</h2>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- Inicio -->
+        <div class="col">
+            <div class="card h-100 bg-zinc-800 text-white border-0 shadow-lg hover-scale">
+                <img src="https://media.vandal.net/m/10-2023/19/2023101917155832_4.jpg"
+                     class="card-img-top"
+                     alt="Nombre de la serie">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Nombre de la Serie</h5>
+                    <p class="card-text mb-1">
+                        <strong>Géneros:</strong> Acción, Fantasía, Drama
+                    </p>
+                    <p class="card-text mb-3">
+                        <strong>Productora:</strong> Studio Mashle
+                    </p>
+                    <a href="#"
+                       class="btn btn-outline-light w-100 mt-auto">
+                        <i class="bi bi-eye me-1"></i> View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Final -->
+    </div>
 </div>
+
+
+<style>
+    /* Efecto hover: escala suave */
+    .hover-scale {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .hover-scale:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important;
+        }
+
+    /* Ajuste de imagen para mantener proporción y recortar */
+    .card-img-top {
+        object-fit: cover;
+        height: 200px;
+    }
+
+    /* Botón con efecto suave */
+    .btn-outline-light {
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+        .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+</style>
+

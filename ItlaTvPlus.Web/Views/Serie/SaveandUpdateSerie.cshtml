@@ -1,0 +1,17 @@
+﻿@model ItlaTvPlus.Application.ViewModels.NewFolder.SeriesViewModel.SaveSerieViewModel
+@{
+    ViewData["Title"] = "Create Mode";
+}
+
+<form asp-controller="Serie" asp-action="Create">
+    <!-- Campos de Serie -->
+    <input asp-for="Serie.Name" class="form-control" />
+    <textarea asp-for="Serie.Description" class="form-control"></textarea>
+
+    <!-- Múltiple selección de géneros -->
+    <label>Géneros</label>
+    <select asp-for="Genders" asp-items="@(new MultiSelectList(Model.Genders, "Id", "Nombre"))" multiple class="form-control">
+    </select>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
